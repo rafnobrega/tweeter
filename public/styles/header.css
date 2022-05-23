@@ -1,0 +1,25 @@
+header {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  background-color: rgb(255, 230, 141);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+background-image: url("https://www.transparenttextures.com/patterns/climpek.png");
+}
+
+.avatar {
+  display: flex;
+}
+
+.full-name {
+  display: flex;
+  font-family: Source Sans Pro, sans-serif;
+  font-weight: 300;
+}
+
+#first-name {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+}

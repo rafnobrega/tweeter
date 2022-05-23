@@ -5,9 +5,10 @@
  */
 html {
   box-sizing: border-box;
-  font-family: "Source Sans Pro";
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -19,7 +20,16 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: "Bungee";
+  font-family: "Source Sans Pro";
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  width: 90%;
+  background-color: #ff7d7d;
 }
 
 /*
