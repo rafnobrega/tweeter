@@ -53,3 +53,7 @@ button {
   display: flex;
   font-family: "Bungee", sans-serif;
 }
+
+.counter-negative {
+  color: rgb(218, 0, 0);
+}
