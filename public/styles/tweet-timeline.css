@@ -1,0 +1,95 @@
+.old-posts {
+  width: 100%;
+}
+
+article.timeline {
+  border: 3px solid rgb(74, 74, 74);
+  margin-top: 35px;
+  margin-bottom: 38px;
+}
+
+article.timeline:hover {
+  box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.1s;
+}
+
+article.timeline header {
+  height: auto;
+  background-image: none;
+  background-color: transparent;
+  width: 100%;
+}
+
+article.timeline header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px 5px 10px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left-info {
+  display: flex;
+  align-items: center;
+}
+
+.mini-avatar {
+  padding-right: 10px;
+  width: 50px;
+  height: auto;
+}
+
+.user {
+  font-size: 0.9rem;
+}
+
+.username {
+  font-size: 0.9rem;
+  color: rgb(84, 84, 84);
+  font-weight: bold;
+}
+
+.timeline-tweet-text {
+  background-color: rgba(227, 227, 227, 0.2);
+  outline: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom-width: 2px;
+  resize: none;
+  font-size: 0.85rem;
+  margin-left: 2%;
+  margin-right: 2%;
+  align-items: flex-end;
+  width: 96%;
+}
+
+article.timeline footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#age {
+  display: flex;
+  font-size: 0.7rem;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+#icons {
+  display: flex;
+  color: #4056a1;
+  font-size: 0.7rem;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+#icons i:hover {
+  color: rgb(182, 182, 0);
+}

@@ -1,80 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      type="text/css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet-timeline.css" type="text/css" />
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
-      <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  </head>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-      <div class="right-panel">
-        <span class="write-new"
-          ><span id="write">Write&nbsp;</span> a new tweet</span
-        >
-        <i class="fa-solid fa-angles-down"></i>
-      </div>
-    </nav>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+</head>
+<script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+</head>
 
-    <!-- Header -->
-    <header>
-      <div class="avatar">
-        <img src="/images/profile-hex.png" />
-      </div>
-      <br />
-      <div>
-        <h2 class="full-name"><span id="first-name">Raf&nbsp;</span>Nóbrega</h2>
-      </div>
-    </header>
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span>tweeter</span>
+    <div class="right-panel">
+      <span class="write-new"><span id="write">Write&nbsp;</span> a new tweet</span>
+      <i class="fa-solid fa-angles-down"></i>
+    </div>
+  </nav>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <!-- <h2>Compose Tweet</h2> -->
-        <form action="/tweets" method="POST">
-          <label for="tweet-text" class="humming">What are you humming about?</label>
-          <textarea name="text" id="tweet-text" placeholder="Tell us here..."></textarea>
-          <div class="button-counter">
-            <button id="button" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+  <!-- Header -->
+  <header>
+    <div class="avatar">
+      <img src="/images/profile-hex.png" />
+    </div>
+    <br />
+    <div>
+      <h2 class="full-name"><span id="first-name">Raf&nbsp;</span>Nóbrega</h2>
+    </div>
+  </header>
+
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <section class="new-tweet">
+      <!-- <h2>Compose Tweet</h2> -->
+      <form action="/tweets" method="POST">
+        <label for="tweet-text" class="humming">What are you humming about?</label>
+        <textarea name="text" id="tweet-text" placeholder="Tell us here..."></textarea>
+        <div class="button-counter">
+          <button id="button" type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+    <!-- Tweet timeline -->
+    <section class="old-posts">
+      <article class="timeline">
+        <header>
+          <div class="user-info">
+            <div class="left-info">
+              <img class="mini-avatar" src="https://i.imgur.com/73hZDYK.png">
+              <p class="user">Name Lastname</p>
+            </div>
+            <p class="username">@username</p>
           </div>
-        </form>
-      </section>
-    </main>
-  </body>
+        </header>
+        <textarea class="timeline-tweet-text"> Hard coded text here...</textarea>
+        <footer>
+          <output name="age" id="age">10 days ago</output>
+          <div id="icons">
+            <span>
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-retweet"></i>
+              <i class="fa-solid fa-heart"></i>
+            </span>
+          </div>
+        </footer>
+      </article>
+      </form>
+    </section>
+  </main>
+</body>
+
 </html>

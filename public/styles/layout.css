@@ -18,7 +18,7 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #ececf4;
   font-size: 24px;
   font-family: "Source Sans Pro";
 }
@@ -32,6 +32,12 @@ body {
   margin-left: 5%;
   margin-right: 5%;
   background-color: #f4f1ec;
+}
+
+.new-tweet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 

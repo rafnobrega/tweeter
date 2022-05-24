@@ -2,7 +2,6 @@ form {
   display: flex;
   justify-content: space-between;
   width: 90vw;
-  /* background-color: red; */
   flex-direction: column;
 }
 
@@ -17,6 +16,7 @@ form {
   border-bottom: 4px black;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
+  margin-top: 10px;
 }
 
 #tweet-text {
@@ -27,8 +27,7 @@ form {
   border-left: none;
   border-bottom-width: thick;
   resize: none;
-  font-size: 0.80em;
-
+  font-size: 0.8em;
 }
 
 .button-counter {
@@ -46,7 +45,6 @@ button {
   color: white;
   border: 0px;
   padding: 3px 10px 3px 10px;
-
 }
 
 .counter {
