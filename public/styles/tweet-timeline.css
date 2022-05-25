@@ -35,7 +35,7 @@ article.tweet header {
   width: 100%;
 }
 
-.left-info {
+.left-side {
   display: flex;
   align-items: center;
 }

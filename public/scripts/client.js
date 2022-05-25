@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function () {
   const data = [
     {
@@ -42,14 +41,8 @@ $(document).ready(function () {
 
   const createTweetElement = function (data) {
     const {
-      user: {
-        name,
-        avatars,
-        handle
-      },
-      content: {
-        text
-      },
+      user: { name, avatars, handle },
+      content: { text },
     } = data;
     let date = new Date(data.created_at);
     date = date.toDateString();
@@ -58,7 +51,7 @@ $(document).ready(function () {
   <article class="tweet">
   <header>
           <div class="user-info">
-            <div class="left-info">
+            <div class="left-side">
               <img class="mini-avatar" src="${avatars}">
               <p class="user">${name}</p>
             </div>
@@ -84,5 +77,10 @@ $(document).ready(function () {
 
   renderTweets(data);
 
-  
+  $("form").submit(function (event) {
+    event.preventDefault();
+    let $tweet = $("#tweet-text").serialize();
+    console.log("MY TWEET:", $tweet);
+    $.ajax("/tweets", { method: "POST", data: $tweet });
+  });
 });
