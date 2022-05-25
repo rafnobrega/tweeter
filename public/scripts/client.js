@@ -5,10 +5,6 @@
  */
 
 $(document).ready(function () {
-
-
-
-  
   const createTweetElement = function (data) {
     const {
       user: { name, avatars, handle },
@@ -57,10 +53,19 @@ $(document).ready(function () {
   $("form").submit(function (event) {
     event.preventDefault();
     let $tweet = $("#tweet-text").serialize();
-    console.log("MY TWEET:", $tweet);
-    $.ajax("/tweets", { method: "POST", data: $tweet }).then(function () {
-      loadTweets();
-    })
+    const tweetText = $("#tweet-text").val().trim();
+    // console.log("MY TWEETTEXT:", tweetText.val());
+    // console.log("MY TWEET:", typeof $tweet);
+    
+    if (tweetText.length < 1)  {
+      return alert("Your message is empty. Please try again.");
+    } else if (tweetText.length > 140) {
+      return alert("Your message exceeds the 140 characters limit.");
+    } else {
+      $.ajax("/tweets", { method: "POST", data: $tweet }).then(function () {
+        loadTweets();
+      });
+    }
   });
 
   const loadTweets = function () {
@@ -68,6 +73,6 @@ $(document).ready(function () {
       console.log("Success! loadTweets was called.");
       return renderTweets(data);
     });
-  }
+  };
   loadTweets();
 });
