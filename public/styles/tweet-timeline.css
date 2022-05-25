@@ -2,18 +2,18 @@
   width: 100%;
 }
 
-article.timeline {
+article.tweet {
   border: 3px solid rgb(74, 74, 74);
   margin-top: 35px;
   margin-bottom: 38px;
 }
 
-article.timeline:hover {
+article.tweet:hover {
   box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.1s;
 }
 
-article.timeline header {
+article.tweet header {
   height: auto;
   background-image: none;
   background-color: transparent;
@@ -21,7 +21,7 @@ article.timeline header {
   margin-top: 0px;
 }
 
-article.timeline header {
+article.tweet header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,7 +50,7 @@ article.timeline header {
   font-size: 0.9rem;
 }
 
-.username {
+.handle {
   font-size: 0.9rem;
   color: rgb(84, 84, 84);
   font-weight: bold;
@@ -71,12 +71,12 @@ article.timeline header {
   width: 96%;
 }
 
-article.timeline footer {
+article.tweet footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-#age {
+#date {
   display: flex;
   font-size: 0.7rem;
   padding-left: 10px;
