@@ -4,20 +4,21 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const escape = function (str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
-
 $(document).ready(function () {
+  // Protection against XSS:
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  // Creates a new tweet and <article> tag
   const createTweetElement = function (data) {
     const {
       user: { name, avatars, handle },
       content: { text },
     } = data;
     let date = new Date(data.created_at);
-    // date = date.toDateString();
 
     let $tweet = $(`
   <article class="tweet">
@@ -47,6 +48,7 @@ $(document).ready(function () {
     return $tweet;
   };
 
+  // Adds (render) tweets in the timeline section
   const renderTweets = function (tweets) {
     let container = $(".timeline");
     container.empty();
@@ -56,25 +58,29 @@ $(document).ready(function () {
     }
   };
 
+  // Submits the new tweet after passing the validation checks:
   $("form").submit(function (event) {
     event.preventDefault();
     let $tweet = $("#tweet-text").serialize();
     const tweetText = $("#tweet-text").val().trim();
+    // Checks if the tweet text is empty:
     if (tweetText.length < 1) {
       return alert("Your message is empty. Please try again.");
+      // Checks if the tweet text over 140 chars:
     } else if (tweetText.length > 140) {
       return alert("Your message exceeds the 140 characters limit.");
     }
-    // happy path:
+    // Happy path:
     else {
       $.ajax("/tweets", { method: "POST", data: $tweet }).then(function () {
         loadTweets();
       });
-      // clears the form:
+      // Clears the form after submit:
       $("#tweet-text").val("");
     }
   });
 
+  // Loads the new tweet and calls the renderTweets fn:
   const loadTweets = function () {
     $.get("/tweets").then(function (data) {
       console.log("Success! loadTweets was called.");
