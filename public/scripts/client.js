@@ -4,6 +4,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 $(document).ready(function () {
   const createTweetElement = function (data) {
     const {
@@ -24,7 +30,7 @@ $(document).ready(function () {
             <p class="handle">${handle}</p>
           </div>
         </header>
-        <p class="timeline-tweet-text">${text}</p>
+        <p class="timeline-tweet-text">${escape(text)}</p>
         <footer>
           <output name="date" id="date">${timeago.format(date)}</output>
           <div id="icons">
@@ -54,17 +60,18 @@ $(document).ready(function () {
     event.preventDefault();
     let $tweet = $("#tweet-text").serialize();
     const tweetText = $("#tweet-text").val().trim();
-    // console.log("MY TWEETTEXT:", tweetText.val());
-    // console.log("MY TWEET:", typeof $tweet);
-    
-    if (tweetText.length < 1)  {
+    if (tweetText.length < 1) {
       return alert("Your message is empty. Please try again.");
     } else if (tweetText.length > 140) {
       return alert("Your message exceeds the 140 characters limit.");
-    } else {
+    }
+    // happy path:
+    else {
       $.ajax("/tweets", { method: "POST", data: $tweet }).then(function () {
         loadTweets();
       });
+      // clears the form:
+      $("#tweet-text").val("");
     }
   });
 
