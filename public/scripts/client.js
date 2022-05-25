@@ -7,23 +7,15 @@
 $(document).ready(function () {
 
 
-  const renderTweets = function (tweets) {
-    let container = $(".timeline");
-    container.empty();
-    for (let tweet of tweets) {
-      let $tweet = createTweetElement(tweet);
-      container.prepend($tweet); 
-    }
-    
-  };
 
+  
   const createTweetElement = function (data) {
     const {
       user: { name, avatars, handle },
       content: { text },
     } = data;
     let date = new Date(data.created_at);
-    date = date.toDateString();
+    // date = date.toDateString();
 
     let $tweet = $(`
   <article class="tweet">
@@ -38,7 +30,7 @@ $(document).ready(function () {
         </header>
         <p class="timeline-tweet-text">${text}</p>
         <footer>
-          <output name="date" id="date">${date}</output>
+          <output name="date" id="date">${timeago.format(date)}</output>
           <div id="icons">
             <span>
               <i class="fa-solid fa-flag"></i>
@@ -51,6 +43,15 @@ $(document).ready(function () {
   
   </article>`);
     return $tweet;
+  };
+
+  const renderTweets = function (tweets) {
+    let container = $(".timeline");
+    container.empty();
+    for (let tweet of tweets) {
+      let $tweet = createTweetElement(tweet);
+      container.prepend($tweet);
+    }
   };
 
   $("form").submit(function (event) {
