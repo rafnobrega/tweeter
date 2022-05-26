@@ -5,7 +5,7 @@
 #error-exceed {
   background: transparent;
   color: #A30306;
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: 10px;
   border: 3px solid #A30306;
   border-radius: 0;
@@ -13,20 +13,16 @@
   display: none;
   box-shadow: 1px 1px 1px #aaaaaa;
   margin-top: 10px;
-  width: 70%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  /* background-image: url(https://tinyurl.com/yebpyvkx);
-  background-repeat: no-repeat;
-  background-position: 20px center;
-  background-size: 30px; */
 }
 
 #error-empty {
   background: transparent;
   color: #A30306;
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: 10px;
   border: 3px solid #A30306;
   border-radius: 0;
@@ -34,14 +30,10 @@
   display: none;
   box-shadow: 1px 1px 1px #aaaaaa;
   margin-top: 10px;
-  width: 70%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  /* background-image: url(https://tinyurl.com/yebpyvkx);
-  background-repeat: no-repeat;
-  background-position: 20px center;
-  background-size: 30px; */
 }
 
 #compose {
