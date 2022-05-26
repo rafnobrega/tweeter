@@ -38,6 +38,7 @@ nav span {
 .fa-solid.fa-angles-down {
   color: rgb(255, 255, 0);
   animation: jump 1.5s infinite;
+  cursor: pointer;
 }
 
 

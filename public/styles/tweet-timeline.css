@@ -93,4 +93,5 @@ article.tweet footer {
 
 #icons i:hover {
   color: rgb(182, 182, 0);
+  cursor: pointer;
 }

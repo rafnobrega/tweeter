@@ -9,6 +9,8 @@ $(document).ready(function () {
   $(".arrow").click(function () {
     $("#compose").toggle("slow", function () {
     });
+  $("#error-empty").hide("slow");
+  $("#error-exceed").hide("slow");
   });
 
   // Protection against XSS:
