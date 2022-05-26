@@ -45,11 +45,8 @@ nav span {
   color: #F01D20;
 }
 
-
-
 @keyframes jump {
   50% {
     transform: translateY(5px);
   }
 }
-

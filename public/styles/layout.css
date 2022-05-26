@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
@@ -21,6 +22,7 @@ body {
   background-color: #ececf4;
   font-size: 24px;
   font-family: "Source Sans Pro";
+  background-image: url("https://i.ibb.co/ykwpdG2/Untitled-2.png");
 }
 
 .container {
@@ -38,7 +40,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
 }
 
 .fa-solid.fa-circle-up {

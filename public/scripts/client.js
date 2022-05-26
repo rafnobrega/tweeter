@@ -5,14 +5,14 @@
  */
 
 $(document).ready(function () {
-  //Toggle composer:
+  // ⭐️ Toggle composer:
   $(".arrow").click(function () {
     $("#compose").toggle("slow", function () {});
     $("#error-empty").hide("slow");
     $("#error-exceed").hide("slow");
   });
 
-  // Jump back to the top button:
+  // ⭐️ Jump back to the top button:
   $("#back-to-top").hide();
 
   $("#back-to-top").click(function () {
@@ -29,14 +29,14 @@ $(document).ready(function () {
     }
   });
 
-  // Protection against XSS:
+  // ⭐️ Protection against XSS:
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  // Creates a new tweet and <article> tag
+  // ⭐️ Creates a new tweet and <article> tag
   const createTweetElement = function (data) {
     const {
       user: { name, avatars, handle },
@@ -72,7 +72,7 @@ $(document).ready(function () {
     return $tweet;
   };
 
-  // Adds (render) tweets in the timeline section
+  // ⭐️ Adds (render) tweets in the timeline section
   const renderTweets = function (tweets) {
     let container = $(".timeline");
     container.empty();
@@ -82,7 +82,7 @@ $(document).ready(function () {
     }
   };
 
-  // Submits the new tweet after passing the validation checks:
+  // ⭐️ Submits the new tweet after passing the validation checks:
   $("form").submit(function (event) {
     event.preventDefault();
     let $tweet = $("#tweet-text").serialize();
@@ -94,7 +94,7 @@ $(document).ready(function () {
     } else if (tweetText.length > 140) {
       $("#error-exceed").slideDown("slow");
     }
-    // Happy path:
+    // Happy-path:
     else {
       $.ajax("/tweets", { method: "POST", data: $tweet }).then(function () {
         loadTweets();
@@ -106,7 +106,7 @@ $(document).ready(function () {
     }
   });
 
-  // Loads the new tweet and calls the renderTweets fn:
+  // ⭐️ Loads the new tweet and calls the renderTweets fn:
   const loadTweets = function () {
     $.get("/tweets").then(function (data) {
       return renderTweets(data);
@@ -114,7 +114,7 @@ $(document).ready(function () {
   };
   loadTweets();
 
-  // Extra functionality - it changes the header background .png pattern on page refresh:
+  // 👽 Extra functionality - it changes the header background .png pattern on page refresh:
   const randomBg = function () {
     const images = [
       "https://www.transparenttextures.com/patterns/climpek.png",
@@ -129,11 +129,10 @@ $(document).ready(function () {
       "https://www.transparenttextures.com/patterns/climpek.png",
     ];
     const choice = Math.floor(Math.random() * images.length);
-    console.log(choice);
     $("#page-top").css("background-image", `url("${images[choice]}")`);
   };
   $("#page-top").on("load", randomBg());
 
-  // Extra functionality - it changes the header background .png pattern when the tweet button is clicked - re-using randomBg function:
+  // 👽 Extra functionality - it changes the header background .png pattern when the tweet button is clicked - re-using randomBg function:
   $("form").submit(randomBg);
 });
