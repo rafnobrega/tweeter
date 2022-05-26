@@ -65,10 +65,10 @@ $(document).ready(function () {
     const tweetText = $("#tweet-text").val().trim();
     // Checks if the tweet text is empty:
     if (tweetText.length < 1) {
-      return alert("Your message is empty. Please try again.");
+      $("#error-empty").slideDown("slow");
       // Checks if the tweet text over 140 chars:
     } else if (tweetText.length > 140) {
-      return alert("Your message exceeds the 140 characters limit.");
+      $("#error-exceed").slideDown("slow");
     }
     // Happy path:
     else {
@@ -77,6 +77,8 @@ $(document).ready(function () {
       });
       // Clears the form after submit:
       $("#tweet-text").val("");
+      $("#error-empty").hide("slow");
+      $("#error-exceed").hide("slow");
     }
   });
 

@@ -58,12 +58,17 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
+      <!-- error messages -->
+      <div class="error-messages">
+      <p id="error-exceed">D'oh! Your message exceeds the 140 characters limit.</p>
+      <p id="error-empty">D'oh! Your message is empty. Please try again.</p>
+      </div>
       <!-- <h2>Compose Tweet</h2> -->
-      <form action="/tweets" method="POST">
+      <form id="compose" action="/tweets" method="POST">
         <label for="tweet-text" class="humming">What are you humming about?</label>
         <textarea name="text" id="tweet-text" placeholder="Tell us here..."></textarea>
         <div class="button-counter">
-          <button id="button" type="submit">Tweet</button>
+          <button id="button-send" type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
