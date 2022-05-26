@@ -7,30 +7,25 @@
 $(document).ready(function () {
   //Toggle composer:
   $(".arrow").click(function () {
-    $("#compose").toggle("slow", function () {
-    });
-  $("#error-empty").hide("slow");
-  $("#error-exceed").hide("slow");
+    $("#compose").toggle("slow", function () {});
+    $("#error-empty").hide("slow");
+    $("#error-exceed").hide("slow");
   });
 
   // Jump back to the top button:
-  
   $("#back-to-top").hide();
 
   $("#back-to-top").click(function () {
-    window.scrollTo(0, 0);
-    console.log("window.scrollTo(0, 0) IS WORKING");
+    $("html, body").animate({ scrollTop: 0 }, 1000);
   });
 
-
-
   $(window).scroll(function () {
-        console.log("WINDOW SCROLLTOP IS WORKING");
     if ($(this).scrollTop()) {
+      $(".right-panel").hide();
       $("#back-to-top").stop(true, true).fadeIn();
     } else {
       $("#back-to-top").stop(true, true).fadeOut();
-      
+      $(".right-panel").show();
     }
   });
 
