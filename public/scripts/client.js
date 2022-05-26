@@ -109,9 +109,31 @@ $(document).ready(function () {
   // Loads the new tweet and calls the renderTweets fn:
   const loadTweets = function () {
     $.get("/tweets").then(function (data) {
-      console.log("Success! loadTweets was called.");
       return renderTweets(data);
     });
   };
   loadTweets();
+
+  // Extra functionality - it changes the header background .png pattern on page refresh:
+  const randomBg = function () {
+    const images = [
+      "https://www.transparenttextures.com/patterns/climpek.png",
+      "https://www.transparenttextures.com/patterns/arches.png",
+      "https://www.transparenttextures.com/patterns/batthern.png",
+      "https://www.transparenttextures.com/patterns/cubes.png",
+      "https://www.transparenttextures.com/patterns/black-thread-light.png",
+      "https://www.transparenttextures.com/patterns/green-gobbler.png",
+      "https://www.transparenttextures.com/patterns/subtle-zebra-3d.png",
+      "https://www.transparenttextures.com/patterns/white-diamond.png",
+      "https://www.transparenttextures.com/patterns/zig-zag.png",
+      "https://www.transparenttextures.com/patterns/climpek.png",
+    ];
+    const choice = Math.floor(Math.random() * images.length);
+    console.log(choice);
+    $("#page-top").css("background-image", `url("${images[choice]}")`);
+  };
+  $("#page-top").on("load", randomBg());
+
+  // Extra functionality - it changes the header background .png pattern when the tweet button is clicked - re-using randomBg function:
+  $("form").submit(randomBg);
 });
