@@ -1,0 +1,72 @@
+
+
+
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    margin-top: 10%;
+  }
+
+  #page-top {
+    max-width: 30%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 0px;
+  }
+
+  .container {
+    width: 64%;
+    margin-right: 3%;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  #compose {
+    width: 55vw;
+  }
+
+  #tweet-text {
+    font-size: 1em;
+  }
+
+  .avatar {
+    padding-top: 26px;
+  }
+
+  .user {
+    font-size: 1rem;
+  }
+
+  .handle {
+    font-size: 1rem;
+  }
+
+  .timeline-tweet-text {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet: minimum width of 768px to maximum width of 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  nav {
+    background-color: transparent;
+    color: #0597F0;
+  }
+
+  #page-top {
+  margin-top: 0px;
+  }
+
+  .fa-solid.fa-angles-down {
+  color: #F01D20;
+}
+
+.fa-solid.fa-angles-down:hover {
+  color: #0597F0;
+}
+
+}
