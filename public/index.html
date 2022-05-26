@@ -26,7 +26,9 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -40,8 +42,9 @@
     <span>tweeter</span>
     <div class="right-panel">
       <span class="write-new"><span id="write">Write&nbsp;</span> a new tweet</span>
-      <i class="fa-solid fa-angles-down"></i>
-    </div>
+      <div class="arrow">
+        <i class="fa-solid fa-angles-down"></i>
+      </div>
   </nav>
 
   <!-- Header -->
@@ -50,7 +53,7 @@
       <img src="/images/profile-hex.png" />
     </div>
     <br />
-    <div>
+    <div class="title">
       <h2 class="full-name"><span id="first-name">Raf&nbsp;</span>Nóbrega</h2>
     </div>
   </header>
@@ -60,8 +63,8 @@
     <section class="new-tweet">
       <!-- error messages -->
       <div class="error-messages">
-      <p id="error-exceed">D'oh! Your message exceeds the 140 characters limit.</p>
-      <p id="error-empty">D'oh! Your message is empty. Please try again.</p>
+        <p id="error-exceed">D'oh! Your message exceeds the 140 characters limit.</p>
+        <p id="error-empty">D'oh! Your message is empty. Please try again.</p>
       </div>
       <!-- <h2>Compose Tweet</h2> -->
       <form id="compose" action="/tweets" method="POST">

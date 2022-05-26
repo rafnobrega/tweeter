@@ -15,7 +15,6 @@ nav {
 
 nav span {
   font-family: "Bungee", sans-serif;
-  
 }
 
 .right-panel {
@@ -24,11 +23,6 @@ nav span {
   align-items: center;
 }
 
-.fa-solid.fa-angles-down {
-
-  color: rgb(255, 255, 0);
-
-}
 .write-new {
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
@@ -40,3 +34,16 @@ nav span {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
 }
+
+.fa-solid.fa-angles-down {
+  color: rgb(255, 255, 0);
+  animation: jump 1.5s infinite;
+}
+
+
+@keyframes jump {
+  50% {
+    transform: translateY(5px);
+  }
+}
+

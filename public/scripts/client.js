@@ -5,6 +5,12 @@
  */
 
 $(document).ready(function () {
+  //Toggle composer:
+  $(".arrow").click(function () {
+    $("#compose").toggle("slow", function () {
+    });
+  });
+
   // Protection against XSS:
   const escape = function (str) {
     let div = document.createElement("div");
