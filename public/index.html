@@ -3,7 +3,7 @@
 
 <head>
   <!-- Meta Information -->
-  <title>Tweeter - Home Page</title>
+  <title>SpringFace - Home Page</title>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
   <!-- External CSS -->
@@ -41,9 +41,9 @@
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
-    <span>tweeter</span>
+    <span>SpringFace</span>
     <div class="right-panel">
-      <span class="write-new"><span id="write">Write&nbsp;</span> a new tweet</span>
+      <span class="write-new"><span id="write">Write&nbsp;</span> a new p'ohst</span>
       <div class="arrow">
         <i class="fa-solid fa-angles-down"></i>
       </div>
@@ -70,10 +70,10 @@
       </div>
       <!-- <h2>Compose Tweet</h2> -->
       <form id="compose" action="/tweets" method="POST">
-        <label for="tweet-text" class="humming">What are you humming about?</label>
+        <label for="tweet-text" class="humming">What's on your mind?</label>
         <textarea name="text" id="tweet-text" placeholder="Tell us here..."></textarea>
         <div class="button-counter">
-          <button id="button-send" type="submit">Tweet</button>
+          <button id="button-send" type="submit">P'ohst!</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
