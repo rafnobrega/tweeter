@@ -40,5 +40,20 @@ body {
   justify-content: center;
 }
 
+.fa-solid.fa-circle-up {
+  display: flex;
+  color: #0597f0;
+  background: #f0eb05;
+  cursor: pointer;
+  font-size: 3rem;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
 
+}
 
+.fa-solid.fa-circle-up:hover {
+  color: #0b6aa3;
+  background: white;
+}

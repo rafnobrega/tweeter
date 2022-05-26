@@ -1,5 +1,5 @@
 nav {
-  background-color: #4056a1;
+  background-color: #0597F0;
   height: 70px;
   width: 100%;
   color: #ffffff;
@@ -36,10 +36,15 @@ nav span {
 }
 
 .fa-solid.fa-angles-down {
-  color: rgb(255, 255, 0);
+  color: #F0EB05;
   animation: jump 1.5s infinite;
   cursor: pointer;
 }
+
+.fa-solid.fa-angles-down:hover {
+  color: #F01D20;
+}
+
 
 
 @keyframes jump {

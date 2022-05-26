@@ -13,6 +13,27 @@ $(document).ready(function () {
   $("#error-exceed").hide("slow");
   });
 
+  // Jump back to the top button:
+  
+  $("#back-to-top").hide();
+
+  $("#back-to-top").click(function () {
+    window.scrollTo(0, 0);
+    console.log("window.scrollTo(0, 0) IS WORKING");
+  });
+
+
+
+  $(window).scroll(function () {
+        console.log("WINDOW SCROLLTOP IS WORKING");
+    if ($(this).scrollTop()) {
+      $("#back-to-top").stop(true, true).fadeIn();
+    } else {
+      $("#back-to-top").stop(true, true).fadeOut();
+      
+    }
+  });
+
   // Protection against XSS:
   const escape = function (str) {
     let div = document.createElement("div");

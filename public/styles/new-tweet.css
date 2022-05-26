@@ -4,10 +4,10 @@
 
 #error-exceed {
   background: transparent;
-  color: #c51244;
+  color: #A30306;
   font-size: 1rem;
   padding: 10px;
-  border: 3px solid #e10040;
+  border: 3px solid #A30306;
   border-radius: 0;
   position: relative;
   display: none;
@@ -25,10 +25,10 @@
 
 #error-empty {
   background: transparent;
-  color: #c51244;
+  color: #A30306;
   font-size: 1rem;
   padding: 10px;
-  border: 3px solid #e10040;
+  border: 3px solid #A30306;
   border-radius: 0;
   position: relative;
   display: none;
@@ -86,12 +86,16 @@
 #button-send {
   display: flex;
   justify-content: flex-start;
-  background-color: #4056a1;
+  background-color: #0597F0;
   font-family: "Bungee", sans-serif;
   color: white;
   border: 0px;
   padding: 3px 10px 3px 10px;
   cursor: pointer;
+}
+
+#button-send:hover {
+  background-color: #0B6AA3;
 }
 
 .counter {
@@ -100,5 +104,5 @@
 }
 
 .counter-negative {
-  color: rgb(218, 0, 0);
+  color: #A30306;
 }
