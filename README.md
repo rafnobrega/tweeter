@@ -15,6 +15,8 @@ SpringFace is a full-stack web application built to practice my HTML, CSS, JS, j
 - Users can click on the bouncing yellow arrow to toggle the tweet composer field.
 - Users can click on the back-to-top button that appears once page scrolling is detected.
 
+
+
 ## Final Product
 
 !["Desktop view"](https://github.com/rafnobrega/tweeter/blob/master/docs/desktop%20app.png?raw=true)
