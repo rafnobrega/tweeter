@@ -17,9 +17,11 @@ SpringFace is a full-stack web application built to practice my HTML, CSS, JS, j
 
 ## Final Product
 
-!["Screenshot of URLs page"](https://github.com/rafnobrega/tinyapp/blob/main/docs/urls-page.png?raw=true)
-!["Screenshot of register page"](https://github.com/rafnobrega/tinyapp/blob/main/docs/register-page.png?raw=true)
-!["Screenshot of Edit URL page"](https://github.com/rafnobrega/tinyapp/blob/main/docs/edit-url-page.png?raw=true)
+!["Desktop view"](https://github.com/rafnobrega/tweeter/blob/master/docs/desktop%20view.png?raw=true)
+!["Desktop view - posting a new tweet"](https://github.com/rafnobrega/tweeter/blob/master/docs/Desktop%20view%20-%20posting%20a%20new%20tweet.gif?raw=true)
+!["Desktop view - Tweet exceeds 140 characters"](https://github.com/rafnobrega/tweeter/blob/master/docs/140%20characters%20exceeded%20error%20message.png?raw=true)
+!["Tablet view - Tweet is empty"](https://github.com/rafnobrega/tweeter/blob/master/docs/empty%20tweet%20error%20message.png?raw=true)
+!["Mobile view - Posting a new tweet"](https://github.com/rafnobrega/tweeter/blob/master/docs/mobile%20view%20-%20posting%20a%20new%20tweet.gif?raw=true)
 
 
 ## Getting Started
